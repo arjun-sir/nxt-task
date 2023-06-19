@@ -1,7 +1,7 @@
 import React from "react";
 import { MenuBar } from "./MenuBar.jsx";
 import { AvatarComp } from "./Avatar.jsx";
-import Image from "next/Image";
+import Image from "next/image";
 import { FaBell } from "react-icons/fa";
 
 export const Navbar = () => {

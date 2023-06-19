@@ -13,9 +13,9 @@ export default function Home() {
 				<div className="w-[20vw] ml-[32px] ">
 					<SideToggle />
 				</div>
-				<div className="mx-[3vw] w-[70vw]">
+				<div className="mx-[3vw] space-y-4 w-[70vw]">
 					<SearchBar />
-					<div className="overflow-x-scroll">
+					<div className="scroll-disable overflow-x-scroll">
 						<DnD />
 					</div>
 				</div>

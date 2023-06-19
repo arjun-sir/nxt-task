@@ -13,11 +13,12 @@ const TaskList = styled.div`
 	min-height: 100px;
 	display: flex;
 	flex-direction: column;
-	background: #f5f4f4;
+	gap: 10px;
+	background: #ededed;
 	min-width: 341px;
 	border-radius: 5px;
 	padding: 15px 15px;
-	margin-right: 45px;
+	margin-right: 10px;
 `;
 
 const TaskColumnStyles = styled.div`
@@ -28,8 +29,9 @@ const TaskColumnStyles = styled.div`
 `;
 
 const Title = styled.span`
-	color: #10957d;
-	background: rgba(16, 149, 125, 0.15);
+	color: black;
+	font-weight: bold;
+	z-index: 10;
 	padding: 2px 10px;
 	border-radius: 5px;
 	align-self: flex-start;

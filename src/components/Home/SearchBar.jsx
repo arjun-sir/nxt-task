@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { CreateDialog } from "../CreateDialog/CreateDialog";
 
 export const SearchBar = () => {
 	return (
@@ -14,9 +15,9 @@ export const SearchBar = () => {
 						placeholder="Search here"
 					/>
 				</div>
-				<button className="bg-[#FE5BAC] text-white p-2 text-[16px] font-semibold rounded-md">
-					Create
-				</button>
+				<div>
+					<CreateDialog />
+				</div>
 			</div>
 		</div>
 	);

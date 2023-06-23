@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import { columnsFromBackend } from "./KanbanData";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import TaskCard from "./TaskCard";
+import * as Dialog from "@radix-ui/react-dialog";
+import { CardDialog } from "@/components/CardDialog/CardDialog";
 
 const Container = styled.div`
 	display: flex;
@@ -95,11 +97,18 @@ const Kanban = () => {
 										>
 											<Title>{column.title}</Title>
 											{column.items.map((item, index) => (
-												<TaskCard
-													key={item}
-													item={item}
-													index={index}
-												/>
+												<Dialog.Root key={item}>
+													<Dialog.Trigger asChild>
+														<button className="text-left">
+															<TaskCard
+																key={item}
+																item={item}
+																index={index}
+															/>
+														</button>
+													</Dialog.Trigger>
+													<CardDialog />
+												</Dialog.Root>
 											))}
 											{provided.placeholder}
 										</TaskList>

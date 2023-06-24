@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { columnsFromBackend } from "./KanbanData";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import TaskCard from "./TaskCard";
+import { TaskCard } from "./TaskCard";
 import * as Dialog from "@radix-ui/react-dialog";
 import { CardDialog } from "@/components/CardDialog/CardDialog";
 
@@ -39,7 +39,7 @@ const Title = styled.span`
 	align-self: flex-start;
 `;
 
-const Kanban = () => {
+export const Kanban = () => {
 	const [columns, setColumns] = useState(columnsFromBackend);
 
 	const onDragEnd = (result, columns, setColumns) => {
@@ -122,5 +122,3 @@ const Kanban = () => {
 		</DragDropContext>
 	);
 };
-
-export default Kanban;

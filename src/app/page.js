@@ -15,9 +15,9 @@ export default function Home() {
 				</div>
 				<div className="mx-[3vw] space-y-4 w-[70vw]">
 					<SearchBar />
-					{/* <div className="scroll-disable overflow-x-scroll">
+					<div className="scroll-disable overflow-x-scroll">
 						<DnD />
-					</div> */}
+					</div>
 				</div>
 			</div>
 		</div>

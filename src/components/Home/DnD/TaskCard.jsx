@@ -41,7 +41,7 @@ const TaskInformation = styled.div`
 	/* } */
 `;
 
-const TaskCard = ({ item, index }) => {
+export const TaskCard = ({ item, index }) => {
 	return (
 		<Draggable key={item.id} draggableId={item.id} index={index}>
 			{(provided) => (
@@ -71,8 +71,6 @@ const TaskCard = ({ item, index }) => {
 		</Draggable>
 	);
 };
-
-export default TaskCard;
 
 // <span className="priority">
 // {item.Priority === 'High' ? (<RedArrow />) : item.Priority === 'Medium' ? (<YellowArrow />) : (<BlueArrow />)}

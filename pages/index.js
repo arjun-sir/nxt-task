@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Link from "next/link";
-import { startClock } from "../actions";
-import Image from "next/image";
+import { fetchState } from "../actions.js";
 import { Navbar } from "../src/components/Navbar/Navbar.jsx";
 import { SideToggle } from "../src/components/Home/SideToggle.jsx";
 import { SearchBar } from "../src/components/Home/SearchBar.jsx";
@@ -10,9 +8,10 @@ import { DnD } from "../src/components/DnD/DnD.jsx";
 
 const Index = () => {
 	const dispatch = useDispatch();
+
 	useEffect(() => {
-		dispatch(startClock());
-	}, [dispatch]);
+		dispatch(fetchState());
+	}, []);
 
 	return (
 		<div>

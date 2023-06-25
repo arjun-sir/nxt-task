@@ -6,6 +6,7 @@ import { MdOutlineHomeWork } from "react-icons/md";
 import { LuMoreVertical } from "react-icons/lu";
 import { IoDocumentAttachSharp } from "react-icons/io5";
 import { IoDocumentText, IoChatbubblesOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 const Draggable = dynamic(
 	() =>
 		import("react-beautiful-dnd").then((mod) => {
@@ -25,6 +26,8 @@ const TaskInformation = styled.div`
 `;
 
 export const TaskCard = ({ item, index }) => {
+	console.log(item);
+
 	return (
 		<Draggable key={item.id} draggableId={item.id} index={index}>
 			{(provided) => (
@@ -47,7 +50,7 @@ export const TaskCard = ({ item, index }) => {
 								</div>
 								<div className="w-[100%] text-sm font-semibold justify-self-start">
 									<div>
-										<h4>UI/UX Designer</h4>
+										<h4>{item.Title}</h4>
 									</div>
 									<div className="flex items-center gap-1 text-[#5A5A5A]">
 										<MdOutlineHomeWork />
@@ -61,14 +64,14 @@ export const TaskCard = ({ item, index }) => {
 								</div>
 							</div>
 							<div className="self-start flex gap-2 mt-2">
-								<div className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7  flex h-[30px] items-center justify-center gap-2 rounded-[4px] px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								<div className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7  flex h-[35px] items-center justify-center gap-2 rounded-[4px] px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoDocumentAttachSharp />
 									<p className="text-[12px] mt-[2px]">75%</p>
 								</div>
-								<div className="text-[#9E9E9E] border border-[#9E9E9E] flex h-[30px] items-center justify-center gap-2 rounded-[50%] border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								<div className="text-[#9E9E9E] border border-[#9E9E9E] flex h-[35px] items-center justify-center gap-2  rounded-[50%] border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoDocumentText />
 								</div>
-								<div className="text-[#9E9E9E] border border-[#9E9E9E] rounded-[50%] flex h-[30px] items-center justify-center gap-2 border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								<div className="text-[#9E9E9E] border border-[#9E9E9E] rounded-[50%] flex h-[35px] items-center justify-center gap-2 border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoChatbubblesOutline />
 								</div>
 							</div>

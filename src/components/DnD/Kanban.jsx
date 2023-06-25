@@ -6,6 +6,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { TaskCard } from "./TaskCard";
 import * as Dialog from "@radix-ui/react-dialog";
 import { CardDialog } from "../CardDialog/CardDialog.jsx";
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
 	display: flex;
@@ -39,8 +40,9 @@ const Title = styled.span`
 	align-self: flex-start;
 `;
 
-export const Kanban = () => {
-	const [columns, setColumns] = useState(columnsFromBackend);
+const Kanban = () => {
+	const columnsFromState = useSelector((state) => state);
+	const [columns, setColumns] = useState(columnsFromState);
 
 	const onDragEnd = (result, columns, setColumns) => {
 		if (!result.destination) return;
@@ -122,3 +124,5 @@ export const Kanban = () => {
 		</DragDropContext>
 	);
 };
+
+export default Kanban;

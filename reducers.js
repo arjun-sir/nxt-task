@@ -1,43 +1,82 @@
-import { combineReducers } from 'redux'
-import * as types from './types'
-
-// COUNTER REDUCER
-const counterReducer = (state = 0, { type }) => {
-  switch (type) {
-    case types.INCREMENT:
-      return state + 1
-    case types.DECREMENT:
-      return state - 1
-    case types.RESET:
-      return 0
-    default:
-      return state
-  }
-}
+import { combineReducers } from "redux";
+import * as types from "./types";
 
 // INITIAL TIMER STATE
-const initialTimerState = {
-  lastUpdate: 0,
-  light: false,
-}
+const initialState = {
+	saved: {
+		title: "Saved",
+		items: [
+			{
+				id: "1",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+			{
+				id: "2",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+			{
+				id: "3",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+			{
+				id: "4",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+		],
+	},
 
-// TIMER REDUCER
-const timerReducer = (state = initialTimerState, { type, payload }) => {
-  switch (type) {
-    case types.TICK:
-      return {
-        lastUpdate: payload.ts,
-        light: !!payload.light,
-      }
-    default:
-      return state
-  }
-}
+	applied: {
+		title: "Applied",
+		items: [
+			{
+				id: "1",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+		],
+	},
+	interviewing: {
+		title: "Interviewing",
+		items: [
+			{
+				id: "1",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+		],
+	},
+	offer: {
+		title: "Offer",
+		items: [
+			{
+				id: "1",
+				Title: "UI/UX Designer",
+				Company: "Ajmera Infotech Inc.",
+			},
+		],
+	},
+};
 
-// COMBINED REDUCERS
-const reducers = {
-  counter: counterReducer,
-  timer: timerReducer,
-}
+// COUNTER REDUCER
+export const createReducer = (state = initialState, action) => {
+	switch (action.type) {
+		case "CREATE_TASK": {
+			return state;
+		}
+		case "FETCH_STATE": {
+			return {
+				...state,
+			};
+		}
+		default:
+			return state;
+	}
+};
 
-export default combineReducers(reducers)
+const rootReducer = combineReducers({
+	createId: createReducer,
+});

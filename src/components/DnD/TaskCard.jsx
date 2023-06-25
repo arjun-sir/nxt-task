@@ -1,11 +1,18 @@
 import React from "react";
-import { Draggable } from "react-beautiful-dnd";
+import dynamic from "next/dynamic";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import { MdOutlineHomeWork } from "react-icons/md";
 import { LuMoreVertical } from "react-icons/lu";
 import { IoDocumentAttachSharp } from "react-icons/io5";
 import { IoDocumentText, IoChatbubblesOutline } from "react-icons/io5";
+const Draggable = dynamic(
+	() =>
+		import("react-beautiful-dnd").then((mod) => {
+			return mod.Draggable;
+		}),
+	{ ssr: false }
+);
 
 const TaskInformation = styled.div`
 	padding: 0 15px;
@@ -54,16 +61,16 @@ export const TaskCard = ({ item, index }) => {
 								</div>
 							</div>
 							<div className="self-start flex gap-2 mt-2">
-								<button className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7  flex h-[30px] items-center justify-center gap-2 rounded-[4px] px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								<div className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7  flex h-[30px] items-center justify-center gap-2 rounded-[4px] px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoDocumentAttachSharp />
 									<p className="text-[12px] mt-[2px]">75%</p>
-								</button>
-								<button className="text-[#9E9E9E] border border-[#9E9E9E] flex h-[30px] items-center justify-center gap-2 rounded-[50%] border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								</div>
+								<div className="text-[#9E9E9E] border border-[#9E9E9E] flex h-[30px] items-center justify-center gap-2 rounded-[50%] border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoDocumentText />
-								</button>
-								<button className="text-[#9E9E9E] border border-[#9E9E9E] rounded-[50%] flex h-[30px] items-center justify-center gap-2 border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
+								</div>
+								<div className="text-[#9E9E9E] border border-[#9E9E9E] rounded-[50%] flex h-[30px] items-center justify-center gap-2 border-dashed px-[10px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
 									<IoChatbubblesOutline />
-								</button>
+								</div>
 							</div>
 						</div>
 					</TaskInformation>

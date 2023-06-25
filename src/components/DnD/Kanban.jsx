@@ -5,7 +5,7 @@ import { columnsFromBackend } from "./KanbanData";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { TaskCard } from "./TaskCard";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CardDialog } from "@/components/CardDialog/CardDialog";
+import { CardDialog } from "../CardDialog/CardDialog.jsx";
 
 const Container = styled.div`
 	display: flex;

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Navbar } from "../components/Navbar/Navbar.jsx";
 import { SideToggle } from "@/components/Home/SideToggle.jsx";
 import { SearchBar } from "@/components/Home/SearchBar.jsx";
-import { DnD } from "@/components/Home/DnD/DnD.jsx";
+import { DnD } from "@/components/DnD/DnD.jsx";
 
 export default function Home() {
 	return (

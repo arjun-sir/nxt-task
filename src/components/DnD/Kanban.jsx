@@ -17,7 +17,7 @@ const TaskList = styled.div`
 	flex-direction: column;
 	gap: 10px;
 	background: #ededed;
-	min-width: 341px;
+	min-width: 300px;
 	border-radius: 5px;
 	padding: 15px 15px;
 	margin-right: 10px;
@@ -34,7 +34,7 @@ const Title = styled.span`
 	color: black;
 	font-weight: bold;
 
-	padding: 2px 10px;
+	padding: 2px 0px;
 	border-radius: 5px;
 	align-self: flex-start;
 `;
